@@ -1,0 +1,38 @@
+name:                hs-exercises
+version:             0.1.0.0
+github:              "dchenk/hs-exercises"
+license:             BSD3
+
+# Metadata used when publishing your package
+# synopsis:            Short description of your package
+# category:            App category here
+
+description: Haskell exercises.
+
+dependencies:
+  - base >= 4.7 && < 5
+
+library:
+  source-dirs: .
+
+executables:
+  hs-exercises-exe:
+    main:                Main.hs
+    source-dirs:         app
+    ghc-options:
+      - -threaded
+      - -rtsopts
+      - -with-rtsopts=-N
+    dependencies:
+      - hs-exercises
+
+tests:
+  hs-exercises-test:
+    main:                Spec.hs
+    source-dirs:         test
+    ghc-options:
+      - -threaded
+      - -rtsopts
+      - -with-rtsopts=-N
+    dependencies:
+      - hs-exercises
